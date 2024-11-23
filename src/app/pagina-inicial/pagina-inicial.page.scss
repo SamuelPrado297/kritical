@@ -1,0 +1,150 @@
+/* pagina-inicial.page.scss */
+
+ion-content {
+  background-color: white;
+  height: 100%;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+}
+
+.search-bar {
+  --background: #f0f0f0;
+  --border-radius: 10px;
+  --padding-start: 15px;
+  --padding-end: 15px;
+  margin: 0 auto 10px auto;
+  width: 50%;
+  color: #000;
+}
+
+.category-selector {
+  margin: 0 auto 10px auto; /* Mantém a margem inferior */
+  width: 80%;
+
+  ion-select {
+    --padding-start: 70px; /* Ajusta o espaço à esquerda para mover 'Todos' mais para a direita */
+  }
+}
+
+.carousel-container {
+  position: relative;
+  margin: 20px auto;
+  width: 80%;
+
+  .carousel-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: opacity 0.5s;
+  }
+
+  .fade {
+    opacity: 0;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+  }
+
+  .left-arrow {
+    left: 10px;
+  }
+
+  .right-arrow {
+    right: 10px;
+  }
+}
+
+.recommended-games {
+  padding: 5px 20px; /* Mantido o padding para a seção */
+  text-align: center;
+
+  h2 {
+    margin-bottom: 10px; /* Mantido a margem inferior do título */
+    font-size: 1.2rem; /* Tamanho da fonte ajustado */
+    color: white; /* Cor do texto para branco */
+    background-color: #333; /* Fundo para contraste */
+    padding: 10px; /* Padding para estética */
+    border-radius: 5px; /* Bordas arredondadas */
+  }
+
+  .recommended-game-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    justify-items: center;
+  }
+
+  .recommended-game {
+    width: 100%;
+    max-width: 200px; /* Limita a largura máxima dos jogos */
+    text-align: center;
+    overflow: hidden;
+    height: 150px;
+  }
+
+  .recommended-game img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .recommended-game img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-bar, .category-selector, .carousel-container {
+    width: 90%;
+  }
+
+  .recommended-game-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .recommended-game-list {
+    grid-template-columns: 1fr;
+  }
+
+  .carousel-container {
+    .carousel-image {
+      height: 150px;
+    }
+
+    .arrow {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+/* pagina-inicial.page.scss */
+
+/* Estilos adicionais para o Action Sheet */
+ion-action-sheet {
+  --background: #fff;
+  --border-radius: 10px;
+}
+
+ion-action-sheet-button {
+  --color: #000;
+  font-size: 1rem;
+}
+
+.see-more-button {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: white !important;
+}

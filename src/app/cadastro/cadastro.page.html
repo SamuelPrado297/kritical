@@ -1,0 +1,47 @@
+<ion-content [fullscreen]="true">
+  <button id="voltar"routerLink="/login"><span>&#8592;</span></button>
+
+  <ion-card color="dark">
+
+    <form>
+      <br>
+      <ion-title class="tt ion-text-center" color="light"><strong>Cadastrar</strong></ion-title>
+      <br>
+
+      <ion-item class="pad" color="dark">
+        <ion-input color="light" label="Nome de usuario:" labelPlacement="floating" placeholder="Digite sua gamertag"
+          type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="gamertag"></ion-input>
+      </ion-item>
+      <hr>
+
+      <ion-item class="pad" color="dark">
+        <ion-input color="light" label="Email:" labelPlacement="floating" placeholder="nome@exemplo.com"
+          type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="email" ></ion-input>
+      </ion-item>
+      <hr>
+
+      <ion-item class="pad" color="dark">
+        <ion-input color="light" label="Senha:" labelPlacement="floating" placeholder="********"
+          type="password" [ngModelOptions]="{standalone: true}" [(ngModel)]="senha"></ion-input>
+      </ion-item>
+      <hr>
+
+      <ion-item class="pad" color="dark">
+        <ion-input color="light" label="Confirmar senha:" labelPlacement="floating" placeholder="********"
+          type="password"></ion-input>
+      </ion-item>
+      <hr>
+
+      <div class="ion-margin submit">
+        <ion-button expand="block" size="large" color="primary" type="submit" (click)="inserirUsuario()"> 
+          <ion-text><strong>Cadastrar</strong></ion-text>
+        </ion-button>
+      </div>
+
+      <div class="ion-margin ion-text-center">
+        <p>Já possui conta? Faça login <a routerLink="/login">aqui</a></p><br>
+      </div>
+    </form>
+  </ion-card>
+</ion-content>
+

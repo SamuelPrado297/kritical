@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- Botão de voltar -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/pagina-inicial"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sobre Nós</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <!-- Aluno 1 -->
+      <ion-col size="12" size-md="4" class="aluno-info">
+        <ion-card (click)="zoomCard($event)" class="zoom-card">
+          <ion-card-header>
+            <ion-avatar>
+              <img src="assets/img/yago-santos.jpg" alt="Foto de Yago Santos">
+            </ion-avatar>
+            <ion-card-title>Yago Santos</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p><strong>Matrícula:</strong> 23101575</p>
+            <p><strong>Turma:</strong> ADS0301M</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- Aluno 2 -->
+      <ion-col size="12" size-md="4" class="aluno-info">
+        <ion-card (click)="zoomCard($event)" class="zoom-card">
+          <ion-card-header>
+            <ion-avatar>
+              <img src="assets/img/samuel-prado.jpg" alt="Foto de Samuel Prado">
+            </ion-avatar>
+            <ion-card-title>Samuel Prado</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p><strong>Matrícula:</strong> 23200349</p>
+            <p><strong>Turma:</strong> ADS0301M</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- Aluno 3 -->
+      <ion-col size="12" size-md="4" class="aluno-info">
+        <ion-card (click)="zoomCard($event)" class="zoom-card">
+          <ion-card-header>
+            <ion-avatar>
+              <img src="assets/img/jardelei-oliveira.jpg" alt="Foto de Jardelei Oliveira">
+            </ion-avatar>
+            <ion-card-title>Jardelei Oliveira</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p><strong>Matrícula:</strong> 21204528</p>
+            <p><strong>Turma:</strong> ADS0301M</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

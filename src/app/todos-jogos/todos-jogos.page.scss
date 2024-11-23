@@ -1,0 +1,21 @@
+/* todos-jogos.page.scss */
+
+.search-bar {
+    --background: #f0f0f0;
+    --border-radius: 10px;
+    --padding-start: 15px;
+    --padding-end: 15px;
+    margin: 10px auto;
+    width: 90%;
+    color: #000;
+  }
+  
+  .category-selector {
+    margin: 0 auto 10px auto;
+    width: 90%;
+  
+    ion-select {
+      --padding-start: 70px;
+    }
+  }
+  

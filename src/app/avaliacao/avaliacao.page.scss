@@ -1,0 +1,74 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #voltar {
+    background: none;
+    border: none;
+    font-size: 30px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
+  
+.game-info {
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+  #favoritos {
+    border-radius: 5px;
+    font-size: 25px;
+    width: 90%;
+    background-color: #ffffff;
+    color: #000000;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  textarea {
+    background-color: none;
+    border: #ffffff 1px solid;
+    border-radius: 10px;
+    color: #ffffff;
+  }
+  
+  //Customização das Estrelas
+  .avaliacao {
+    display: flex;
+  }
+  
+  .star-icon {
+    list-style-type: none;
+    width: 18%;
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+  }
+  
+  .star-icon::before {
+    content: "\2605";
+  }
+  
+  .star-icon.ativo ~ .star-icon::before {
+    content: "\2606";
+  }
+  
+  .avaliacao:hover .star-icon::before {
+    content: "\2605";
+  }
+  
+  .star-icon:hover ~ .star-icon::before {
+    content: "\2606";
+  }
+  //Fim da Customização das Estrelas
+
+  #avaliar {
+    font-size: 20px;
+    color: #ffffff;
+  }
+  

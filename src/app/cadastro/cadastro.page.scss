@@ -1,0 +1,28 @@
+ion-content {
+    --background: linear-gradient(rgb(29, 29, 29), rgb(29, 29, 29), blue);
+
+    ion-card {
+      box-shadow: none;
+      border-radius: 1.5em;
+      //transform: translateY(45%);
+      height: 90vh;
+      margin: 3vh;
+      form{
+        margin-top: 5vh;
+        a{
+          color: black;
+        }
+        ion-col{
+            text-align: center;
+        }
+      }
+    }
+  }
+
+  #voltar {
+    background: none;
+    border: none;
+    font-size: 30px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }

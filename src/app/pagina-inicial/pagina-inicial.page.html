@@ -1,0 +1,92 @@
+<!-- src/app/pagina-inicial/pagina-inicial.page.html -->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <strong>Bem Vindo</strong>
+    </ion-title>
+    <ion-buttons slot="end">
+      <!-- Menu de Opções -->
+      <ion-menu-button auto-hide="false" aria-label="Menu de opções"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Menu Lateral -->
+<ion-menu side="end" menuId="optionsMenu" contentId="mainContent">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Opções</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item button (click)="goToLogin()">
+        <ion-icon name="log-in-outline" slot="start"></ion-icon>
+        <ion-label>Login/Cadastro</ion-label>
+      </ion-item>
+      <ion-item button (click)="goToSobreNos()">
+        <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+        <ion-label>Sobre Nós</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-content [fullscreen]="true" id="mainContent">
+  <!-- Barra de Pesquisa -->
+  <ion-searchbar 
+    placeholder="Pesquisar jogos" 
+    [(ngModel)]="searchTerm" 
+    class="search-bar" 
+    (click)="toggleCategorySelector()">
+  </ion-searchbar>
+
+  <!-- Seleção de Categoria -->
+  <div *ngIf="showCategorySelector" class="category-selector">
+    <ion-item lines="none">
+      <ion-label>Categoria</ion-label>
+      <ion-select [(ngModel)]="selectedCategory" (ionChange)="toggleCategorySelector()" interface="popover">
+        <ion-select-option *ngFor="let category of categories" [value]="category">
+          {{ category }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+
+  <!-- Carrossel de Imagens -->
+  <div class="carousel-container">
+    <img [src]="slideImages[currentImage]" 
+         class="carousel-image" 
+         [class.fade]="fade" />
+
+    <img 
+      src="https://icones.pro/wp-content/uploads/2021/06/symbole-fleche-gauche-gris.png" 
+      class="arrow left-arrow" 
+      (click)="prevImage()" 
+      alt="Anterior"
+    />
+    
+    <img 
+      src="https://pixsector.com/cache/ef1ee4a1/av85f1b171d762037fe92.png" 
+      class="arrow right-arrow" 
+      (click)="nextImage()" 
+      alt="Próximo"
+    />
+  </div>
+
+  <!-- Seção de Jogos Recomendados -->
+  <div class="recommended-games">
+    <h2>Jogos Recomendados</h2>
+    <div class="recommended-game-list">
+      <div *ngFor="let game of filteredGames" class="recommended-game">
+        <img [src]="game.image" alt="{{game.title}}" />
+      </div>
+    </div>
+    <!-- Botão "Ver Mais" -->
+    <ion-button fill="clear" (click)="goToAllGames()" class="see-more-button">
+      Avalie Jogos
+    </ion-button>
+    
+  </div>
+</ion-content>

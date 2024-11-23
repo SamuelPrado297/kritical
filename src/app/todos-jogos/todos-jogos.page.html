@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Todos os Jogos</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/pagina-inicial"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Barra de Pesquisa -->
+  <ion-searchbar 
+    placeholder="Pesquisar jogos" 
+    [(ngModel)]="searchTerm" 
+    class="search-bar" 
+    (ionInput)="onSearchChange(searchTerm)">
+  </ion-searchbar>
+
+  <!-- Seleção de Categoria -->
+  <div *ngIf="showCategorySelector" class="category-selector">
+    <ion-item lines="none">
+      <ion-label>Categoria</ion-label>
+      <ion-select [(ngModel)]="selectedCategory" (ionChange)="loadGames()" interface="popover">
+        <ion-select-option *ngFor="let category of categories" [value]="category">
+          {{ category }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+
+  <!-- Lista de Jogos -->
+  <ion-list>
+    <ion-item *ngFor="let game of filteredGames" (click)="goToAvaliacao(game)">
+      <ion-thumbnail slot="start">
+        <img [src]="game.background_image" alt="{{ game.name }}">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ game.name }}</h2>
+        <p>{{ getGenresString(game) }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Infinite Scroll -->
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreGames($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Carregando mais jogos...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  <!-- Loading Spinner -->
+  <ion-loading [isOpen]="isLoading" message="Carregando jogos..."></ion-loading>
+</ion-content>
+

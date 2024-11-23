@@ -1,0 +1,29 @@
+<ion-content [fullscreen]="true">
+  <button id="voltar"routerLink="/pagina-inicial"><span>&#8592;</span></button>
+  <ion-card color="dark">   
+    <form>
+      <br>
+      <ion-title class="tt ion-text-center" color="light"><strong>Login</strong></ion-title>
+      <br>
+      <ion-item class="pad" color="dark">
+        <ion-input color="light" label="Email:" labelPlacement="floating" placeholder="nome@exemplo.com" type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="email"></ion-input>
+      </ion-item>
+      <hr>
+
+      <ion-item class="pad" color="dark">
+        <ion-input color="light" label="Senha:" labelPlacement="floating" placeholder="Digite sua senha" type="password" [ngModelOptions]="{standalone: true}" [(ngModel)]="senha"></ion-input>
+      </ion-item><br>
+
+      <div class="ion-margin submit">
+        <ion-button expand="block" size="large" color="primary" type="submit" (click)="logarUsuario()"> 
+          <ion-text><strong>Entrar</strong></ion-text>
+        </ion-button>
+      </div>
+      <br><br>
+
+      <div class="ion-margin ion-text-center">
+        <p>Não possui conta? Cadastre-se <a routerLink="/cadastro">aqui</a></p><br>
+      </div>
+    </form>
+  </ion-card>
+</ion-content>

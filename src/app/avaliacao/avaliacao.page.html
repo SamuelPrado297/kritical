@@ -1,0 +1,40 @@
+<!-- src/app/avaliacao/avaliacao.page.html -->
+
+<!--API: https://api.rawg.io/api/games/2?key=79ea2fa95be74b4382a7ee23105c5c15-->
+<ion-header [translucent]="true">
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+    </ion-toolbar>
+  </ion-header>
+
+<body>
+<button id="voltar"routerLink="/todos-jogos"><span>&#8592;</span></button>
+
+<div class="game-info">
+  <img src="" alt="" >
+  <strong><h1>{{ gameName }}</h1></strong>
+  <p [innerHTML]="gameDescription"></p>
+</div>
+
+  <div class="container">
+    <textarea [(ngModel)]="comment" rows="8" cols="40" name="opinion" id="opinion" placeholder="Digite sua crítica..."></textarea>
+  </div>
+
+  <div class="container-stars">
+    <ul class="avaliacao">
+      <li class="star-icon" data-avaliacao="1"></li>
+      <li class="star-icon" data-avaliacao="2"></li>
+      <li class="star-icon" data-avaliacao="3"></li>
+      <li class="star-icon" data-avaliacao="4"></li>
+      <li class="star-icon" data-avaliacao="5"></li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <ion-button type="submit" id="avaliar" (click)="submitReview()">Avaliar</ion-button>
+  </div>
+  </body>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "kritical",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

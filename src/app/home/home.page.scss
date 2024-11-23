@@ -1,0 +1,47 @@
+/* home.page.scss */
+.background {
+  background: linear-gradient(to bottom, black, darkblue); /* Degradê de preto para azul escuro */
+  height: 100%; /* Garante que o fundo preencha toda a tela */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 50%; /* Ajuste o tamanho da logo conforme necessário */
+  max-width: 300px; /* Limita o tamanho máximo da logo */
+}
+
+.rectangular-button {
+  background-color: white; /* Cor de fundo do botão */
+  color: black; /* Cor do texto do botão */
+  padding: 10px 20px; /* Espaçamento interno do botão */
+  border-radius: 5px; /* Bordas arredondadas do botão */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  transition: background-color 0.3s, transform 0.3s; /* Adiciona transição para transformação */
+  margin-top: 20px; /* Ajuste o valor conforme necessário */
+}
+
+.rectangular-button:hover {
+  background-color: #f0f0f0; /* Cor de fundo levemente diferente ao passar o mouse */
+  transform: scale(1.05); /* Leve aumento de escala para feedback visual */
+}
+
+.expand {
+  animation: pulse 1s infinite; /* Chama a animação de pulso */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* Tamanho original */
+  }
+  50% {
+    transform: scale(1.05); /* Aumenta ligeiramente */
+  }
+  100% {
+    transform: scale(1); /* Retorna ao tamanho original */
+  }
+}
+
+

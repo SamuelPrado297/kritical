@@ -1,0 +1,28 @@
+ion-card {
+  text-align: center;
+}
+
+ion-avatar {
+  margin: 0 auto 10px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.aluno-info {
+  margin-top: 20px;
+}
+.zoom-card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.zoom-card.zoomed {
+  transform: scale(1.1); /* Aplica o zoom */
+}
